@@ -7,3 +7,8 @@
 ```bash
 $ bundle exec rackup
 ```
+
+### Tests
+```bash
+$ bundle exec rspec
+```

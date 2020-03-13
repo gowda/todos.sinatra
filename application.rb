@@ -1,5 +1,7 @@
 require 'sinatra'
 
 get '/' do
-  'Hello world!'
+  # unless a symbol is passed, erb treats the parameter as
+  # string template
+  erb :'root.html', layout: :'layout.html'
 end

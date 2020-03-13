@@ -1,0 +1,14 @@
+language: ruby
+cache: bundler
+rvm:
+  - 2.6
+before_install:
+  - gem install bundler
+  - bundle config path vendor/bundle
+install:
+  - bundle install --jobs=3 --retry=3
+before_script:
+  - bundle exec rubocop
+script:
+  - bundle exec rspec
+

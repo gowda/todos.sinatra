@@ -1,4 +1,5 @@
 # todos.sinatra
+[![Build Status](https://travis-ci.com/gowda/todos.sinatra.svg?branch=master)](https://travis-ci.com/gowda/todos.sinatra)
 
 [TodoMVC specification](https://github.com/tastejs/todomvc/blob/master/app-spec.md) implemented using [Sinatra](http://sinatrarb.com/)
 

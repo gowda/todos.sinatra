@@ -1,2 +1,5 @@
 # bundler config
 /.bundle
+
+# SQLite3 databases
+*.sqlite3

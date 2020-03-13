@@ -3,15 +3,27 @@
 require 'sinatra'
 require 'active_record'
 
-db_directory = File.expand_path('db', __dir__)
-FileUtils.mkdir_p(db_directory) unless File.directory?(db_directory)
+def production?
+  Sinatra::Application.environment.to_s == 'production'
+end
 
-db_file = File.expand_path(
-  "#{Sinatra::Application.environment}.sqlite3",
-  db_directory
-)
+db_config = if production?
+              ENV['DATABASE_URL']
+            else
+              db_directory = File.expand_path('db', __dir__)
+              unless File.directory?(db_directory)
+                FileUtils.mkdir_p(db_directory)
+              end
 
-ActiveRecord::Base.establish_connection(
-  adapter: 'sqlite3',
-  database: db_file
-)
+              db_file = File.expand_path(
+                "#{Sinatra::Application.environment}.sqlite3",
+                db_directory
+              )
+
+              {
+                adapter: 'sqlite3',
+                database: db_file
+              }
+            end
+
+ActiveRecord::Base.establish_connection(db_config)

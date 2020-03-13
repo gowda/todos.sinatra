@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sinatra'
 
 set :public_folder, File.expand_path('static', __dir__)

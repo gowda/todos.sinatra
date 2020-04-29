@@ -27,3 +27,6 @@ $ bundle exec rackup
 ```bash
 $ bundle exec rspec
 ```
+
+## Author
+Basavanagowda Kanur

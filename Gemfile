@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 gem 'rake', '~> 13.0.0'
 
-gem 'activerecord', '~> 6.0.0'
+gem 'activerecord', '~> 6.0.5'
 gem 'sinatra', '~> 2.0.0'
 
 gem 'pg', '~> 1.2.0', group: :production
